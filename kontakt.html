@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="img/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+          content="Jesteśmy firmą któa zajmuje się kupnem samochodów, a także świadczymy usługi pomocy drogowej na terenie województwa Lubelskiego.">
+    <meta name="author" content="Bartosz Sterniczuk">
+
+    <title>Skup samochodów</title>
+
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/fontello.css"/>
+
+
+    <link href="css/main.css" rel="stylesheet">
+    <script>
+        function zapisz() {
+            var item = {};
+            item.imie = document.getElementById("name").value;
+            item.surrname = document.getElementById("surrname").value;
+            item.address = document.getElementById("address").value;
+            item.telefon = document.getElementById("telefon").value;
+            item.eMail = document.getElementById("eMail").value;
+            item.marka = document.getElementById("marka").value;
+            item.rokProd = document.getElementById("rokProd").value;
+
+            localStorage.setItem('dane', JSON.stringify(item));
+        }
+
+        function Edytuj() {
+
+            var dane = JSON.parse(localStorage.getItem('dane'))
+            document.getElementById("formularz").name.value = dane.imie;
+            document.getElementById("formularz").surrname.value = dane.surrname;
+            document.getElementById("formularz").address.value = dane.address;
+            document.getElementById("formularz").eMail.value = dane.eMail;
+            document.getElementById("formularz").telefon.value = dane.telefon;
+            document.getElementById("formularz").marka.value = dane.marka;
+            document.getElementById("formularz").rokProd.value = dane.rokProd;
+
+        }
+
+        function Usun() {
+            localStorage.clear();
+        }
+    </script>
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container">
+
+        <a class="navbar-brand" href="index.html">AD-CAR <img src="img/logo2.png" width="50" height="30" alt="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="skup.html">Skup</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pomoc.html">Pomoc Drogowa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="galeria.html">Galeria</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="kontakt.html">Kontakt</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-12"><h1 class="text-center mt-5 h1">Kontakt</h1></div>
+        <div class="col-md-8">
+            <form class="mb-4" action="mailto:bartek114@autograf.pl" method="post" id="formularz">
+                <div class="form-row">
+                    <div class="col-lg-6 col-md-12">
+                        <label for="name">*Imię: </label>
+                        <input type="text" required id="name" class="form-control" placeholder="Podaj imię">
+                    </div>
+
+                    <div class="col-lg-6 col-md-12">
+                        <label for="surrname">*Nazwisko: </label>
+                        <input type="text" required class="form-control" id="surrname"
+                               placeholder="Podaj Nazwisko">
+                    </div>
+
+                    <div class="col-lg-6 col-md-12">
+                        <label for="address">Adres: </label>
+                        <input type="text" class="form-control" id="address" placeholder="Podaj adres">
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <label for="eMail">*Email:</label>
+                        <input type="email" required class="form-control" id="eMail"
+                               placeholder="admin@email.com">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="telefon">*Podaj telefon:</label>
+                        <input type="tel" required class="form-control" id="telefon" placeholder="601102203"
+                               pattern="[0-9]{3}[0-9]{3}[0-9]{3}">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="marka">Marka:</label>
+                        <select id="marka" class="form-control">
+                            <option>Wybierz...</option>
+                            <option>Audi</option>
+                            <option>BMW</option>
+                            <option>Renault</option>
+                            <option>Mercedes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="rokProd">*Rok produkcji: </label>
+                        <input type="number" required class="form-control" min=1970 max=2020 id="rokProd"
+                               placeholder="Podaj rok produkcji">
+                    </div>
+                </div>
+                <div id="przycisk" class="col-lg-12">
+                    <button type="submit" class="btn btn-primary mt-2" onclick="zapisz()">Wyślij</button>
+                    <button type="reset" class="btn btn-primary mt-2">Anuluj</button>
+                    <button type="button" class="btn btn-primary mt-2" onclick="Edytuj()">Edytuj</button>
+                    <button type="button" class="btn btn-primary mt-2" onclick="Usun()">Usuń dane</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4 text-center mt-4 font-weight-normal mb-4 mb-lg-auto" id="kontaktDane">
+            <h1 class="h2">Dane Kontaktowe: </h1>
+            <i class="icon-mail"></i> Email: kontakt@ad-car.pl
+            <br>
+            <i class="icon-phone"></i> Telefon: 123-456-789
+            <br>
+            <i class="icon-home"></i><i style="line-height: 20px;">Adres: Racławicka 5/44, <br>21-040 Świdnik</i>
+        </div>
+    </div>
+</div>
+
+
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">AD-CAR &copy; Wszystkie prawa zastrzeżone 2020</p>
+        <p class="m-0 text-center text-white"> Tel. 123 456 789, eMail: konakt@ad-car.pl</p>
+    </div>
+</footer>
+
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="img/logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Jesteśmy firmą któa zajmuje się kupnem samochodów, a także świadczymy usługi pomocy drogowej na terenie województwa Lubelskiego.">
+  <meta name="author" content="Bartosz Sterniczuk">
+
+  <title>Skup samochodów</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/main.css" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script>
+		var numer =0;
+		function zmiana ()
+			{
+				numer++;  if (numer>4)  numer=1;
+				var plik= "<img class=\"img-fluid rounded mb-4 mb-lg-0\" width=\"900px\" src=\"img/slajd" + numer + ".jpg\"/>";
+				document.getElementById("zdjecie").innerHTML = plik;
+				$("#zdjecie").fadeIn(500);
+				setTimeout("schowaj()", 4500);
+				setTimeout("zmiana()", 5000);
+			}
+		function schowaj ()
+			{
+				$("#zdjecie").fadeOut(500);
+			}
+</script>
+</head>
+
+<body  onload="zmiana ()">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container">
+
+      <a class="navbar-brand" href="index.html">AD-CAR <img src="img/logo2.png" width="50" height="30" alt="logo"> </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="skup.html">Skup</a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" href="pomoc.html">Pomoc Drogowa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="galeria.html">Galeria</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="kontakt.html">Kontakt</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Heading Row -->
+    <div class="row align-items-center my-5">
+      <div class="col-lg-7" id="zdjecie">
+       <!-- <img class="img-fluid rounded mb-4 mb-lg-0" width ="900"  src="img/4.jpg" alt=""> -->
+	  
+      </div>
+      <!-- /.col-lg-8 -->
+      <div class="col-lg-5">
+        <h1 class="font-weight-light text-center">AD-CAR</h1>
+        <p class="text-justify">Jesteśmy firmą zajmującą się kupnem samochodów, a także swiądczącą Pomocą drogową. Swoje usługi wykonujemy na terenie województwa Lubelskiego.</p><h1 class="h3"> Chcesz pozbyć się problemu?</h1>
+		<div id="zadzwon">
+			<a class="btn btn-primary mt-3" href="kontakt.html">Zadzwoń </a>
+		</div>
+      </div>
+      <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+
+
+    <!-- Content Row -->
+    <div class="row">
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title text-center">Skup samochodów </h2>
+            <p class="card-text text-justify">Chcesz szybko sprzedać samochód? My Ci w tym pomożemy. Naciśnij przycisk aby dowiedzieć się więcej o naszych standardach. </p>
+          </div>
+          <div class="card-footer">
+            <a href="skup.html" class="btn btn-primary btn-sm">Więcej</a>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title text-center">Pomoc Drogowa</h2>
+            <p class="card-text text-justify">Miałeś wypadek? Lub chcesz przetransportować niedziałające auto? My Ci w tym pomorzemy. Naciśnij przycisk, aby dowiedzieć się więcej.</p>
+          </div>
+          <div class="card-footer">
+            <a href="pomoc.html" class="btn btn-primary btn-sm">Więcej</a>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title text-center">Kontakt</h2>
+            <p class="card-text text-justify">Jeśli masz jakiekolwiek pytania, skontaktuj się z nami.</p>
+          </div>
+          <div class="card-footer">
+            <a href="kontakt.html" class="btn btn-primary btn-sm">Więcej</a>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">AD-CAR &copy; Wszystkie prawa zastrzeżone 2020</p>
+	  <p  class="m-0 text-center text-white"> Tel. 123 456 789, eMail: konakt@ad-car.pl</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
